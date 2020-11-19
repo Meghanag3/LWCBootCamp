@@ -1,0 +1,35 @@
+<template>
+    <lightning-card title="For:Each Demo" icon-name="custom:custom14">
+            <table class="slds-table slds-table_bordered">
+                <tr>
+                    <th scope="col"> Index</th>
+                    <th scope="col"> Id</th>
+                    <th scope="col"> Name</th>
+                    <th scope="col"> Email</th>
+                </tr>
+
+            <template for:each={celebrityList} for:item="celebrity" for:index="ind">
+                <tr key={celebrity.Id}>
+                    <td>{ind}</td>
+                    <td>{celebrity.Id}</td>
+                    <td>{celebrity.Name}</td>
+                    <td>{celebrity.Email}</td>   
+                </tr>
+            </template>
+        </table>
+    </lightning-card>
+
+    <lightning-card title="Iterator Demo" icon-name="custom:custom14">
+        <ul class="slds-m-around_medium">
+           
+            <template iterator:celeb={celebrityList}>
+                <li key={celeb.value.Id}> 
+                    <div if:true={celeb.first} class="list-first"></div>
+                    {celeb.value.Name} - {celeb.value.Email} 
+                    <div if:true={celeb.last} class="list-last"></div>
+                </li>
+                
+            </template>
+    </ul>
+    </lightning-card>
+</template>
