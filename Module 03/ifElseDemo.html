@@ -1,0 +1,11 @@
+<template>
+    <template if:true={showTom}>
+        <img src={tomImageURL}  class="image"/>
+    </template>
+    <template if:false={showTom}>
+        <img src={jerryImageURL}  class="image"/>
+    </template>
+    <!--img src={imageURL} alt="img" class="image"/-->
+    <lightning-button variant="brand"  class="slds-m-left_x-small" label={btnLabel} onclick={toggleImage}></lightning-button>
+
+</template>
