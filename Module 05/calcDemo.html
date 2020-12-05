@@ -1,0 +1,42 @@
+<template>
+    <div class="slds-m-around_small"  style="display: inline-block">
+    <lightning-card title="Full Calculator" icon-name="custom:custom28">
+
+        <div class="slds-p-around_x-small">
+            <lightning-input value={calcExp} label="Calc Expression" name="txtInput" readonly></lightning-input>
+        </div>
+        <div class="slds-p-around_x-small">
+            <lightning-input value={calcResult} label="Result" name="txtResult" readonly> </lightning-input>
+        </div>
+        
+            <table class="slds-table slds-table_bordered">
+                <tr>
+                    <td><lightning-button variant="brand-outline" label="1" title="Number1" onclick={handleClick} class="slds-m-left_x-small"></lightning-button></td>
+                    <td><lightning-button variant="brand-outline" label="2" title="Number2" onclick={handleClick} class="slds-m-left_xx-small"></lightning-button></td>
+                    <td><lightning-button variant="brand-outline" label="3" title="Number3" onclick={handleClick} class="slds-m-left_x-small"></lightning-button></td>
+                    <td><lightning-button variant="brand" label="+" title="Addition" onclick={handleClick} ></lightning-button></td>
+                </tr>
+                <tr>
+                    <td><lightning-button variant="brand-outline" label="4" title="Number4" onclick={handleClick} class="slds-m-left_x-small"></lightning-button></td>
+                    <td><lightning-button variant="brand-outline" label="5" title="Number5" onclick={handleClick} class="slds-m-left_xx-small"></lightning-button></td>
+                    <td><lightning-button variant="brand-outline" label="6" title="Number6" onclick={handleClick} class="slds-m-left_x-small"></lightning-button></td>
+                    <td><lightning-button variant="brand" label="-" title="Substact" onclick={handleClick} ></lightning-button></td>
+                </tr>
+
+                <tr>
+                    <td><lightning-button variant="brand-outline" label="7" title="Number7" onclick={handleClick} class="slds-m-left_x-small"></lightning-button></td>
+                    <td><lightning-button variant="brand-outline" label="8" title="Number8" onclick={handleClick} class="slds-m-left_xx-small"></lightning-button></td>
+                    <td><lightning-button variant="brand-outline" label="9" title="Number9" onclick={handleClick} class="slds-m-left_x-small"></lightning-button></td>
+                    <td><lightning-button variant="brand" label="*" title="Multiply" onclick={handleClick} ></lightning-button></td>
+                </tr>
+                <tr>
+                    <td><lightning-button variant="neutral" label="CLR" title="Clear" onclick={handleClick} ></lightning-button></td>
+                    <td><lightning-button variant="brand-outline" label="0" title="Number0" onclick={handleClick} class="slds-m-left_xx-small"></lightning-button></td>
+                    <td><lightning-button variant="success" label="=" title="EqualTo" onclick={handleClick} class="slds-m-left_x-small"></lightning-button></td>
+                    <td><lightning-button variant="brand" label="/" title="Division" onclick={handleClick} ></lightning-button></td>
+                </tr>
+        	</table>
+	</lightning-card>
+	</div>
+
+</template>
