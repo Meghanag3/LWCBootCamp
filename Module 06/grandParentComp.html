@@ -1,0 +1,15 @@
+<template>
+    <div class="slds-box">
+        <lightning-card title="Grand Parent" icon-name="standard:person_account">
+
+            <div class="slds-p-left_x-large slds-p-bottom_x-small" oncustomclick={handleChildClick}>
+                <div class="slds-clearfix">
+                    <p>{selectionCount} of 3 Children Selected</p>
+                    <lightning-button  class="slds-float_right" variant="brand" label="Reset All" onclick={handleReset}></lightning-button>
+                </div>
+                <div class="slds-border_bottom slds-p-bottom_x-small"></div>
+                <c-parent-comp></c-parent-comp>
+            </div>
+        </lightning-card>
+    </div>
+</template>
