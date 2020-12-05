@@ -1,0 +1,79 @@
+<template>
+    <div class="slds-grid">
+        <div class="slds-col slds-p-around_x-small slds-size--1-of-3" >
+            <template if:false={showAllAccFields}>
+
+                <lightning-card  title="Create Account">
+                        <lightning-button label="Show All Account Fields" onclick={showAllAcc} slot="actions"></lightning-button>
+                        <lightning-record-form
+                            object-api-name={objectApiName1}
+                            fields={fields1}
+                            onsuccess={handleSuccess1}>
+                        </lightning-record-form>
+                </lightning-card>
+            </template>
+
+            <template if:true={showAllAccFields}>
+
+                <lightning-card  title="Create Account">
+                        <lightning-record-form
+                            object-api-name={objectApiName1}
+                            layout-type="Full"
+                            onsuccess={handleSuccess1}>
+                        </lightning-record-form>
+                </lightning-card>
+            </template>
+        </div>
+
+        <div class="slds-col slds-p-around_x-small slds-size--1-of-3" >
+            <template if:false={showAllOpptyFields}>
+
+                <lightning-card  title="Create Opporunity">
+                        <lightning-button label="Show All Opporunity Fields" onclick={showAllOppty} slot="actions"></lightning-button>
+                        <lightning-record-form
+                            object-api-name={objectApiName3}
+                            fields={fields3}
+                            onsuccess={handleSuccess3}>
+                        </lightning-record-form>
+                </lightning-card>
+            </template>
+
+            <template if:true={showAllOpptyFields}>
+
+                <lightning-card  title="Create Opporunity">
+                        <lightning-record-form
+                            object-api-name={objectApiName3}
+                            layout-type="Full"
+                            onsuccess={handleSuccess3}>
+                        </lightning-record-form>
+                </lightning-card>
+            </template>
+        </div>
+
+        <div class="slds-col slds-p-around_x-small slds-size--1-of-3" >
+            <template if:false={showAllContactFields}>
+
+                <lightning-card  title="Create Contact">
+                        <lightning-button label="Show All Contact Fields" onclick={showAllContact} slot="actions"></lightning-button>
+                        <lightning-record-form
+                            object-api-name={objectApiName2}
+                            fields={fields2}
+                            onsuccess={handleSuccess2}>
+                        </lightning-record-form>
+                </lightning-card>
+            </template>
+
+            <template if:true={showAllContactFields}>
+
+                <lightning-card  title="Create Contact">
+                        <lightning-record-form
+                            object-api-name={objectApiName2}
+                            layout-type="Full"
+                            onsuccess={handleSuccess2}>
+                        </lightning-record-form>
+                </lightning-card>
+            </template>
+        </div>
+
+    </div>
+</template>
