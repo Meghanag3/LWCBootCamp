@@ -1,0 +1,52 @@
+<template>
+    <lightning-card icon-name="utility:search" title="Search Opportunity">
+        <div class="slds-m-around_medium">
+        <lightning-input onchange={handleSearchKeyChange} type="search" value={searchKey}></lightning-input>
+            
+        <br/>
+        <template if:true={opportunitySearchResult.data}>
+            <template if:true={searchKey}>
+
+                <div class="slds-grid">
+                    <div class="slds-col slds-p-around_x-small slds-size--1-of-3 slds-box"  >
+
+                        <template for:each={opportunitySearchResult.data} for:item="oppty">
+
+                                <div key={oppty.Id} slot="actions" class="slds-m-around_medium">                       
+                                    <div class="slds-col">                    
+                                        <lightning-button onclick={selectOpportunity} label={oppty.Name} variant="neutral"  value={oppty.Id}></lightning-button>                    
+                                    </div>
+                                </div>
+
+                        </template>
+                    </div>
+                    <div class="slds-col slds-p-around_x-small slds-size--2-of-3 slds-box" >
+
+                    <template if:true={showOpp}>
+                        <lightning-card title="Opportunity Detail..." icon-name="standard:opportunity">
+                            <div class="slds-m-around_medium">
+                                <lightning-record-form record-id={oppId} object-api-name='Opportunity' layout-type="Compact" columns="2" mode="readonly" ></lightning-record-form>
+                
+                                <lightning-progress-indicator variant="base" type="path" current-step={progress}  >
+                                   
+                                    <template for:each={steps} for:item="step">
+                                        <lightning-progress-step label={step.label} value={step.value} key={step.label}></lightning-progress-step>
+                                    </template>
+                
+                                </lightning-progress-indicator>
+                
+                            </div>
+                        </lightning-card>
+                    </template> 
+                </div>
+            </div>
+            </template>
+        </template>
+
+
+        </div>
+    </lightning-card>
+
+    
+
+</template>
