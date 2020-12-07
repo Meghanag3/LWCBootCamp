@@ -1,0 +1,23 @@
+<template>
+    <lightning-card title="Contact Subscription List" icon-name="standard:contact">
+        <template if:false={subscribed}>
+            <lightning-button slot="actions" onclick={subscribeToMessageChannel} label="Subscribe"></lightning-button>
+        </template>
+        <template if:true={subscribed}>
+            <lightning-button slot="actions" onclick={unsubscribeToMessageChannel} label="Unsubscribe"></lightning-button>
+        </template>
+            <lightning-button slot="actions" onclick={clear} label="Clear"></lightning-button>
+
+        <table class="slds-table slds-table_bordered">
+            <tr>
+                <th scope="col"> Contact Name</th>
+            </tr>
+
+        <template for:each={contactList} for:item="con" >
+            <tr key={con}>
+                <td>{con}</td>
+            </tr>
+        </template>
+    </table>
+    </lightning-card>
+</template>
